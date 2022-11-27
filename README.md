@@ -39,6 +39,8 @@
 ### Association
 
 - belongs_to :user
+- has_one :order
+- has_one :address
 
 ### ordersテーブル
 
@@ -50,6 +52,7 @@
 | security                         | string     | null: false                    |
 
 - belongs_to :user
+- belongs_to :item
 
 
 ### addressesテーブル
@@ -65,3 +68,4 @@
 ### Association
 
 - belongs_to :user
+- belongs_to :item
