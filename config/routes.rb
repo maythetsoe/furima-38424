@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   get 'users/index', to: 'users#index'
   root to: 'items#index'
   resources :items, only: :index
-  resources :users, only: [:index, :delete]
 end
