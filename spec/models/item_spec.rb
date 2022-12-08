@@ -27,33 +27,33 @@ RSpec.describe Item, type: :model do
     @item.valid?
     expect(@item.errors.full_messages).to include "Description can't be blank"
   end
-  it 'detail_category_idが空では出品できない' do
-    @item.detail_category_id = nil
+  it 'カテゴリーに「---」が選択されている場合は出品できない' do
+    @item.detail_category_id = '---'
   @item.valid?
   expect(@item.errors.full_messages).to include "Detail category can't be blank"
   end
-   it 'detail_commodity_condition_idが空では出品できない' do
-   @item.detail_commodity_condition_id = ''
+   it '商品の状態に「---」が選択されている場合は出品できない' do
+   @item.detail_commodity_condition_id = '---'
    @item.valid?
     expect(@item.errors.full_messages).to include "Detail commodity condition can't be blank"
    end
-   it 'delivery_burden_idが空では出品できない' do
-  @item.delivery_burden_id = ''
+   it '配送料の負担に「---」が選択されている場合は出品できない' do
+  @item.delivery_burden_id = '---'
   @item.valid?
    expect(@item.errors.full_messages).to include "Delivery burden can't be blank"
    end
-   it 'region_idが空では出品できない' do
-   @item.region_id = ''
+   it '発送元の地域に「---」が選択されている場合は出品できない' do
+   @item.region_id = '---'
    @item.valid?
   expect(@item.errors.full_messages).to include "Region can't be blank"
   end
-   it 'days_to_ship_idが空では出品できない' do
-   @item.days_to_ship_id = ''
-  @item.valid?
+   it '発送までの日数に「---」が選択されている場合は出品できない' do
+   @item.days_to_ship_id = '---'
+   @item.valid?
    expect(@item.errors.full_messages).to include "Days to ship can't be blank"
    end
    it 'priceが空では出品できない' do
-   @item.price = ''
+   @item.price = nil
    @item.valid?
    expect(@item.errors.full_messages).to include "Price can't be blank"
    end
