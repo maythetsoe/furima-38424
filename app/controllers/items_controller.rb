@@ -21,12 +21,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @item.user_id 
-      redirect_to item_path  unless current_user.id == @item.user_id
-    else
+    if unless current_user.id == @item.user_id
       redirect_to root_path
     end
   end
+end
 
   def update
   if @item.update(item_params)
