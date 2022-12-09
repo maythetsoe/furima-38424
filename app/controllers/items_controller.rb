@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_tweet, only: [:edit, :show, :update]
+  before_action :set_tweet, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -31,6 +31,14 @@ class ItemsController < ApplicationController
     redirect_to item_path
   else
     render :edit
+  end
+end
+
+def destroy
+  if @item.destroy
+    redirect_to root_path
+  else
+    render :index
   end
 end
 
