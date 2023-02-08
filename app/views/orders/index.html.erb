@@ -46,7 +46,7 @@
           <label for="number">カード番号</label>
           <div id='number' class="payjs-outer form-wrap">
               <%# ここにフォームが生成されます %>
-         </div>
+         <%# </div> %>
         <%# <%= f.text_field :number, class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
         <%# <div class='available-card'> %> 
           <%= image_tag 'card-visa.gif', class: 'card-logo'%>
@@ -63,6 +63,7 @@
          <label for="exp-date">有効期限</label>
         <div id='exp-date' class="payjs-outer form-wrap">
     <%# ここにフォームが生成されます %>
+      </div>
       </div>
         <%# <div class='input-expiration-date-wrap'>
           <%= f.text_area :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
